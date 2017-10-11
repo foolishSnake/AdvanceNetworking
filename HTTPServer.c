@@ -26,7 +26,7 @@ int main(int argc, char **argv){
         for (;;)
         {
                 connfd = Accept(listenfd, (SA *) NULL, NULL);
-	//Add read 
+
 	while ( (n = read(connfd, buff, MAXLINE)) > 0)
 	{
 		buff[n] = 0;
@@ -56,11 +56,8 @@ int main(int argc, char **argv){
 
 	Write(connfd, buff, strlen(buff));
 
-	//End read
-        //        snprintf(buff, sizeof(buff), "Phils DT server %.24s\r\n", ctime(&ticks));
-        //        Write(connfd, buff, strlen(buff));
 
-         //       Close(connfd);
+        Close(connfd);
         }// end for
 
 }// end main
