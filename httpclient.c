@@ -25,7 +25,7 @@ main (int argc, char **argv)
         if (connect(sockfd, (SA *) & servaddr, sizeof(servaddr)) < 0)
                 err_sys("connect error");
  
-        snprintf(outbuff,sizeof(outbuff), "GET /dbourke/ HTTP/1.1\r\nHost:www.comp.dit.ie\r\nConnection: close\r\n\r\n");
+        snprintf(outbuff,sizeof(outbuff), "GET /index.html HTTP/1.1\r\nHost:www.comp.dit.ie\r\nConnection: close\r\n\r\n");
         Write(sockfd, outbuff, strlen(outbuff));
  
         while ( (n =  read(sockfd, recvline, MAXLINE)) > 0) {
