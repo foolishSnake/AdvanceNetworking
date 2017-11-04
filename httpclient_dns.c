@@ -27,7 +27,7 @@ int main (int argc, char **argv)
 			err_msg("gethostbyname error for host: %s: %s",ptr, hstrerror(h_errno));
 		
 		pptr = hptr->h_addr_list;
-		memcpy(&servaddr.sin_addr, *pptr, sizeof(*pptr));
+		memcpy(&servaddr.sin_addr, *pptr, sizeof(pptr));
 		
         //if (inet_pton(AF_INET, argv[1], &servaddr.sin_addr) <=0)
         //        err_quit("inet_pton error for %s", argv[1]);
