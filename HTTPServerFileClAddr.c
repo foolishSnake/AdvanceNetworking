@@ -31,8 +31,8 @@ int main(int argc, char **argv){
         len = sizeof(cliaddr);
 
         connfd = Accept(listenfd, (SA *) &cliaddr, &len);
-
-        printf("\nConnection from %s, port %d\n", Inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)), ntons(cliaddr.sin_port));
+        //error in line 35
+        printf("\nConnection from %s, port %d\n", inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)), ntons(cliaddr.sin_port));
 
 
 
