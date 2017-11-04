@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 
         connfd = Accept(listenfd, (SA *) &cliaddr, &len);
         //error in line 35
-        printf("\nConnection from %s, port %d\n", inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)), ntons(cliaddr.sin_port));
+        printf("\nConnection from %s, port %d\n", inet_ntop(AF_INET, &cliaddr.sin_addr, buff, sizeof(buff)), ntohs(cliaddr.sin_port));
 
 
 
