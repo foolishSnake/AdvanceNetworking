@@ -19,7 +19,7 @@ int main(int argc, char **argv){
 
     bzero(&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = hton1(INADDR_ANY);
+    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
     servaddr.sin_port = htons(atoi(argv[1]));
 
     Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
@@ -54,7 +54,7 @@ int main(int argc, char **argv){
         if (n < 0)
             err_sys("read error");
 
-        sscanf(rbuff, "%s %s %s", cmd, path, vers);
+        sscanf(rbuff, "%s %s %s", cmd, path, vars);
 
         strcat(path1, path);
 
@@ -72,7 +72,7 @@ int main(int argc, char **argv){
 
         strcpy(wbuff,"");
 
-        while((char_in = fgetc(hfile)) != EOF)
+        while((char_in = fgetc(hFile)) != EOF)
         {
             wbuff[count] = char_in;
             count++;
