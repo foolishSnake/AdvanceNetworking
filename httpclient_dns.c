@@ -23,7 +23,7 @@ int main (int argc, char **argv)
         servaddr.sin_port = htons(atoi(argv[2]));
 		
 		ptr = argv[1];
-		if ( (hptr = gethostbyname(ptr)) == NULL) {
+		if ( (hptr = gethostbyname(ptr)) == NULL) 
 			err_msg("gethostbyname error for host: %s: %s",ptr, hstrerror(h_errno));
 		
 		pptr = hptr->h_addr_list;
@@ -44,12 +44,12 @@ int main (int argc, char **argv)
                 if (fputs(recvline, stdout) == EOF)
                         err_sys("fputs error");
  
-        }
-0        if (n < 0)
+        } //end while
+        if (n < 0)
                 err_sys("read error");
  
         printf("counter = %d\n", counter);
  
         exit(0);
 			
-}
+} // end main
