@@ -1,7 +1,7 @@
 #include "unp.h"
 #include <time.h>
 #include <string.h>
-#define HOME_PAGE "202: <html><html><body></body>\n"
+#define HOME_PAGE "202: <html><body><h1>Advance Networking Web Server</h1></body></html>\n"
 
 int main(int argc, char **argv){
         int n, listenfd, connfd;
