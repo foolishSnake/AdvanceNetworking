@@ -49,7 +49,12 @@ int main(int argc, char **argv){
 
 	if (strcmp(username, "admin") && strcmp(password, "pass"))
 	{
-		snprintf(buff, sizeof(buff), "DENIED");
+		if(counter <3)
+            snprintf(buff, sizeof(buff), "You have %d attempt(s) left");
+            counter++;
+        else
+            snprintf(buff, sizeof(buff), "DENIED");
+            break;
 
 		Write(connfd, buff, strlen(buff));
 		snprintf(buff, sizeof(buff), "You have %d attemts left",(3 - counter));
@@ -67,6 +72,8 @@ int main(int argc, char **argv){
 
 	} // end while
 
+        printf(“Written: %s\n”, buff);
+        fflush(stdout);
 
         Close(connfd);
         }// end for
