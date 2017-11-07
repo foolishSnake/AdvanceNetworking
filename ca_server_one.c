@@ -49,18 +49,18 @@ int main(int argc, char **argv){
 
 	if (strcmp(username, "admin") && strcmp(password, "pass"))
 	{
-		if(counter <3)
-            snprintf(buff, sizeof(buff), "You have %d attempt(s) left");
+		if(counter <3){
+            snprintf(buff, sizeof(buff), "You have %d attemts left",(3 - counter));
             counter++;
-        else
+		}
+        /*else{
             snprintf(buff, sizeof(buff), "DENIED");
             break;
-
+        } */
+        if(counter == 2){
 		Write(connfd, buff, strlen(buff));
-		snprintf(buff, sizeof(buff), "You have %d attemts left",(3 - counter));
-        counter++;
-
-	}
+		snprintf(buff, sizeof(buff), "DENIED");
+     	}
 	else
 	{
 		snprintf(buff, sizeof(buff),"PROCEED");
