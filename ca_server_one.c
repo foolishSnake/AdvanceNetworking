@@ -49,7 +49,7 @@ int main(int argc, char **argv){
 
 	if (strcmp(username, "admin") && strcmp(password, "pass"))
 	{
-		snprintf(buff, sizeof(buff), "PROCEED",(counter - 3));
+		snprintf(buff, sizeof(buff), "PROCEED");
 
 		Write(connfd, buff, strlen(buff));
         counter++;
