@@ -52,6 +52,7 @@ int main(int argc, char **argv){
 		snprintf(buff, sizeof(buff), "DENIED");
 
 		Write(connfd, buff, strlen(buff));
+		snprintf(buff, sizeof(buff), "You have %d attemts left",(3 - counter));
         counter++;
 
 	}
