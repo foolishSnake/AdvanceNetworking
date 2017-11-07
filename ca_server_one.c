@@ -4,7 +4,7 @@
 // #define HOME_PAGE "202: <html><body><h1>Advance Networking Web Server<h1/></body></html>\n"
 
 int main(int argc, char **argv){
-        int n, listenfd, connfd;
+        int n, listenfd, connfd, counter = 0;
         struct sockaddr_in servaddr;
         char buff[MAXLINE], username[16], password[64];
         //time_t ticks;
@@ -45,16 +45,24 @@ int main(int argc, char **argv){
 
 	sscanf(buff, "%s %s", username, password);
 
+	while(counter < 3){
+
 	if (strcmp(username, "admin") || strcmp(password, "pass"))
 	{
-		snprintf(buff, sizeof(buff), "DENIED");
+		snprintf(buff, sizeof(buff), "DENIED\n You have %d more tries",(counter - 3));
+
+		Write(connfd, buff, strlen(buff));
+        counter++;
 	}
 	else
 	{
 		snprintf(buff, sizeof(buff), "PROCEED");
+		Write(connfd, buff, strlen(buff));
 	}
 
-	Write(connfd, buff, strlen(buff));
+
+
+	} // end while
 
 
         Close(connfd);
