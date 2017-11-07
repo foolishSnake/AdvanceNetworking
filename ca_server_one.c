@@ -71,7 +71,7 @@ int main(int argc, char **argv){
 
 
 	} // end while
-        printd("Written: %s/n", buff);
+        printf("Written: %s/n", buff);
         fflush(stdout);
 
         Close(connfd);

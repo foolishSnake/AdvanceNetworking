@@ -16,7 +16,7 @@ int main(int argc, char **argv){
     /*  'servaddr' is the address structor for the server
         'cliaddr' is the address structor for the client
     */
-    char buff[40], wbuff[MAXLINE], rbuff[MAXLINE], cmd[16], path1[64] = "", path[64], vars[16];
+    char buff[40], wbuff[MAXLINE], rbuff[MAXLINE], cmd[16], path1[64] = ".", path[64], vars[16];
     /*  'buff' is used to store client address information for printing to screen
         'wbuff' is the buffer filed by the 'hFile' (index.html or error.html)
         and then writen to the 'connfd' connected socket
