@@ -6,7 +6,7 @@
 int main(int argc, char **argv){
         int n, listenfd, connfd;
         struct sockaddr_in servaddr;
-        char buff[MAXLINE], username[16], password[64],vers[16];
+        char buff[MAXLINE], username[16], password[64];
         //time_t ticks;
 
         if (argc !=2)
@@ -45,7 +45,7 @@ int main(int argc, char **argv){
 
 	sscanf(buff, "%s %s", username, password);
 
-	if (strcmp(username, "admin") || strcmp(password "pass"))
+	if (strcmp(username, "admin") || strcmp(password, "pass"))
 	{
 		snprintf(buff, sizeof(buff), "PROCEED");
 	}
