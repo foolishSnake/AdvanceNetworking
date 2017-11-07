@@ -47,9 +47,9 @@ int main(int argc, char **argv){
 
 	while(counter < 3){
 
-	if (strcmp(username, "admin") || strcmp(password, "pass"))
+	if (strcmp(username, "admin") && strcmp(password, "pass"))
 	{
-		snprintf(buff, sizeof(buff), "DENIED\n You have %d more tries",(counter - 3));
+		snprintf(buff, sizeof(buff), "PROCEED",(counter - 3));
 
 		Write(connfd, buff, strlen(buff));
         counter++;
@@ -57,7 +57,7 @@ int main(int argc, char **argv){
 	}
 	else
 	{
-		snprintf(buff, sizeof(buff), "PROCEED");
+		snprintf(buff, sizeof(buff), "DENIED");
 		Write(connfd, buff, strlen(buff));
 		break;
 	}
