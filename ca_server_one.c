@@ -52,7 +52,7 @@ int main(int argc, char **argv){
 		if(counter <3){
             snprintf(buff, sizeof(buff), "You have %d attemts left",(3 - counter));
             counter++;
-		}
+		} // end if
         /*else{
             snprintf(buff, sizeof(buff), "DENIED");
             break;
@@ -60,18 +60,19 @@ int main(int argc, char **argv){
         if(counter == 2){
 		Write(connfd, buff, strlen(buff));
 		snprintf(buff, sizeof(buff), "DENIED");
-     	}
+     	} // end if
+	} // end if
 	else
 	{
 		snprintf(buff, sizeof(buff),"PROCEED");
 		Write(connfd, buff, strlen(buff));
 		break;
-	}
+	} // end else
 
 
 
 	} // end while
-        printd("Written: %s/n", buff);
+        printf("Written: %s/n", buff);
         fflush(stdout);
 
         Close(connfd);
