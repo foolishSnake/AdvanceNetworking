@@ -53,11 +53,13 @@ int main(int argc, char **argv){
 
 		Write(connfd, buff, strlen(buff));
         counter++;
+
 	}
 	else
 	{
 		snprintf(buff, sizeof(buff), "PROCEED");
 		Write(connfd, buff, strlen(buff));
+		break;
 	}
 
 
