@@ -49,20 +49,6 @@ int main(int argc, char **argv){
 
 	if (strcmp(username, "admin") && strcmp(password, "pass"))
 	{
-<<<<<<< HEAD
-		if(counter <3){
-            snprintf(buff, sizeof(buff), "You have %d attemts left",(3 - counter));
-            counter++;
-		}
-        /*else{
-            snprintf(buff, sizeof(buff), "DENIED");
-            break;
-        } */
-        if(counter == 2){
-		Write(connfd, buff, strlen(buff));
-		snprintf(buff, sizeof(buff), "DENIED");
-     	}
-=======
 		if(counter <3){
             snprintf(buff, sizeof(buff), "You have %d attemts left",(3 - counter));
             counter++;
@@ -76,7 +62,6 @@ int main(int argc, char **argv){
 		snprintf(buff, sizeof(buff), "DENIED");
      	} // end if
 	} // end if
->>>>>>> 93551a82d2a79bbc4335aa656e0b5d8c3e0f8be0
 	else
 	{
 		snprintf(buff, sizeof(buff),"PROCEED");
@@ -87,13 +72,8 @@ int main(int argc, char **argv){
 
 
 	} // end while
-<<<<<<< HEAD
         printf("Written: %s/n", buff);
         fflush(stdout);
-=======
-        printf("Written: %s/n", buff);
-        fflush(stdout);
->>>>>>> 93551a82d2a79bbc4335aa656e0b5d8c3e0f8be0
 
         Close(connfd);
         }// end for
